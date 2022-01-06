@@ -2,8 +2,12 @@ import React from "react";
 import ReactDom from "react-dom";
 
 import "./index.css";
+import { books } from "./books";
+import Book from "./Book";
 
 // You don't have to do this via a CSS file.
+
+// By running npm-build and then putting your build folder in netlify, you can deploy an app.
 
 // Must capitalize name of component to indicate it's a component to React.
 // Good to add prettier & emmet to your Visual Studio Code for easier coding.
@@ -14,21 +18,6 @@ import "./index.css";
 // React fragments are React.Fragment or <>
 // 3) We need to use camelCase for HTML attribute.
 
-// Vars set-up
-const books = [
-  {
-    id: 1,
-    img: "https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg",
-    title: "I Love You to the Moon and Back",
-    author: "Amelia Hepworth",
-  },
-  {
-    id: 2,
-    img: "https://images-na.ssl-images-amazon.com/images/I/51ZSpMl1-LL._SX379_BO1,204,203,200_.jpg",
-    title: "Designing Data Intensive Applications in Python",
-    author: "Martin Kleppmann",
-  },
-];
 // const author = "Martin Kleppmann";
 // const title = "Designing Data Intensive Applications in Python";
 // const img =
@@ -50,6 +39,7 @@ const books = [
 
 // This method uses the spread operator!
 // spreads out all the properties in the book!
+// If using an unchanging list, you can map over book,index
 function BookList() {
   return (
     <section className="booklist">
@@ -61,22 +51,6 @@ function BookList() {
 }
 
 // React, props is short for properties!
-
-const Book = ({ img, title, author }) => {
-  // let's say that I don't want to write props, I could do this...
-  // const {img, title, author} = props
-  // You'd replace props above with ({})
-  // children prop is a unchanged name but useful if you don't define a prop name.
-
-  // const { img, title, author } = props.book;
-  return (
-    <article className="book">
-      <img src={img} alt="bookcover" />
-      <h1> {title} </h1>
-      <h4>{author}</h4>
-    </article>
-  );
-};
 
 // const Image = () => (
 //   <img
